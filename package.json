@@ -1,0 +1,25 @@
+{
+  "name": "angular-material-rally",
+  "version": "1.0.0",
+  "description": "Implementation of the angular-material study Rally",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poojashastry/angular-material-rally.git"
+  },
+  "keywords": [
+    "angular",
+    "material"
+  ],
+  "author": "cool-people-3000",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/poojashastry/angular-material-rally/issues"
+  },
+  "homepage": "https://github.com/poojashastry/angular-material-rally#readme"
+}
