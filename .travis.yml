@@ -1,3 +1,4 @@
+language: node_js
 after_success:
   - |
        $(npm bin)/set-up-ssh --key "$encrypted_1523a56e560f_key" \
