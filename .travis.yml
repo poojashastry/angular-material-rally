@@ -3,9 +3,6 @@ node_js:
   - 12.13.0
 addons:
   - chrome: stable
-before_install:
-  - # start your web application and listen on `localhost`
-  - google-chrome-stable --headless --no-sandbox --disable-gpu --remote-debugging-port=9222 http://localhost &
 after_success:
   - |
        $(npm bin)/set-up-ssh --key "$encrypted_1523a56e560f_key" \
