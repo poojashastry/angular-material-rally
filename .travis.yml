@@ -13,8 +13,8 @@ jobs:
       script:
         - echo 'Deploying'
         -
-          $(npm bin)/set-up-ssh --key "$encrypted_1523a56e560f_key" \
-                                --iv "$encrypted_1523a56e560f_iv" \
+          $(npm bin)/set-up-ssh --key "$encrypted_58a1aa26d61a_key" \
+                                --iv "$encrypted_58a1aa26d61a_iv" \
                                 --path-encrypted-key "travis/github_deploy_key.enc"
           $(npm bin)/update-branch --commands "ng deploy --base-href ./" \
                               --commit-message "Deploying to github pages" \
@@ -28,4 +28,9 @@ stages:
     if: type = push AND branch = master
 env:
   global:
-    - secure: "rEcDiR+RowI87H/BE5blDMOZapO4RTlYJyCZy8AEcm5qg33EGqWE1jli6I46VJDuqDQoaM62zMh7Vnksf9CarHNaBzoaAAqLwtJP7lGS3xGJDfbeVfaYSu9faJdskEOUsJY1usMBrw0ach3g3RUN6k7umv8omcwdc/bP7WdlcPipZu2fJZC4mHSKf+K4H/HxotWwKvXdL4Tzjcq5ZDXd2yObIFbfYaP34m+N82JBEuz6bK41TK45hCitTXVLq3Av9Ymuc8pxvFEgRBrAL/6f7FWTTxliekxNNbAHLXodVM7S47iMLWlKNAyj9qlDhfX5IHU0XGLUwOKjBpL6Xm64TpZR3DYVHJMF40gtdxgI2jA2lFIHuJrkHTSvXHuEwetjXOGpU0Ir97Q6RrPKjohfdDiRmRNxOqM6oGKxGbAVrpr4sVBqJ2Tvoj23hEwbfP6LfEF+SDbjc7Drw7Ho3SMaJRKYY4VTLCNLFN6ackbvgtoCjDmYxB4S2oZneYHW5pRJbY+feb4bilPQDui7N/QwPTlJmbXGHmjqsMM/eoUwjKRffb8HVnvpQvOSXpqvfKsPXQQFXKbiyCEcMCEn3MYYNAYbn1CrM2TX675Zw+MlAE9v3hbP6A5dmpj1Fa0/+Zn6K8i7MD+VV3eNi16X7WoZBT19S1fgZgMizPwZITicPg0="
+  - secure: rEcDiR+RowI87H/BE5blDMOZapO4RTlYJyCZy8AEcm5qg33EGqWE1jli6I46VJDuqDQoaM62zMh7Vnksf9CarHNaBzoaAAqLwtJP7lGS3xGJDfbeVfaYSu9faJdskEOUsJY1usMBrw0ach3g3RUN6k7umv8omcwdc/bP7WdlcPipZu2fJZC4mHSKf+K4H/HxotWwKvXdL4Tzjcq5ZDXd2yObIFbfYaP34m+N82JBEuz6bK41TK45hCitTXVLq3Av9Ymuc8pxvFEgRBrAL/6f7FWTTxliekxNNbAHLXodVM7S47iMLWlKNAyj9qlDhfX5IHU0XGLUwOKjBpL6Xm64TpZR3DYVHJMF40gtdxgI2jA2lFIHuJrkHTSvXHuEwetjXOGpU0Ir97Q6RrPKjohfdDiRmRNxOqM6oGKxGbAVrpr4sVBqJ2Tvoj23hEwbfP6LfEF+SDbjc7Drw7Ho3SMaJRKYY4VTLCNLFN6ackbvgtoCjDmYxB4S2oZneYHW5pRJbY+feb4bilPQDui7N/QwPTlJmbXGHmjqsMM/eoUwjKRffb8HVnvpQvOSXpqvfKsPXQQFXKbiyCEcMCEn3MYYNAYbn1CrM2TX675Zw+MlAE9v3hbP6A5dmpj1Fa0/+Zn6K8i7MD+VV3eNi16X7WoZBT19S1fgZgMizPwZITicPg0=
+before_install:
+  - |
+      declare -r SSH_FILE="$(mktemp -u $HOME/github_deploy_key)"
+      openssl aes-256-cbc -K $encrypted_58a1aa26d61a_key -iv $encrypted_58a1aa26d61a_iv
+        -in travis/github_deploy_key.enc -out github_deploy_key -d
