@@ -3,16 +3,28 @@ node_js:
   - 12.13.0
 addons:
   - chrome: stable
-after_success:
-  - |
-       $(npm bin)/set-up-ssh --key "$encrypted_1523a56e560f_key" \
-                             --iv "$encrypted_1523a56e560f_iv" \
-                             --path-encrypted-key "travis/github_deploy_key.enc"
-        $(npm bin)/update-branch --commands "ng deploy --base-href ./" \
-                             --commit-message "Deploying to github pages" \
-                             --directory "dist" \
-                             --distribution-branch "gh-pages" \
-                             --source-branch "master"
+jobs:
+  include:
+    - stage: test
+      script:
+        - echo 'Running tests..'
+        - npm run test
+    - stage: deploy
+      script:
+        - |
+            $(npm bin)/set-up-ssh --key "$encrypted_1523a56e560f_key" \
+                                  --iv "$encrypted_1523a56e560f_iv" \
+                                  --path-encrypted-key "travis/github_deploy_key.enc"
+              $(npm bin)/update-branch --commands "ng deploy --base-href ./" \
+                                  --commit-message "Deploying to github pages" \
+                                  --directory "dist" \
+                                  --distribution-branch "gh-pages" \
+                                  --source-branch "master"
+stages:
+  - name: test
+    if: type = pull_request
+  - name: deploy
+    if: type = push AND branch = master
 deploy:
   provider: pages
   skip_cleanup: true
