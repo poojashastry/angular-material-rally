@@ -1,5 +1,7 @@
 # Rally
 
+[![Build Status](https://travis-ci.org/poojashastry/angular-material-rally.svg?branch=master)](https://travis-ci.org/poojashastry/angular-material-rally)
+
 Implementation of the angular material study Rally: https://material.io/design/material-studies/rally.html
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.1.
