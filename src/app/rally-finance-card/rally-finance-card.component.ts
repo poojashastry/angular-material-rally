@@ -26,7 +26,7 @@ export class RallyFinanceCardComponent implements OnInit {
   @Input() items: FinanceSubcategory[];
 
   /** Number of items that are visible in the collapsed view of this component. */
-  @Input() visibleItemsSize : number;
+  @Input() visibleItemsSize: number;
 
   constructor() {}
 
