@@ -3,26 +3,26 @@
   <mat-sidenav mode="side" opened>
     <div class="sidenav-wrapper">
       <div class="logo-wrapper">
-        <img class="logo" src="/assets/logo.png" />
+        <img class="logo" src="assets/logo.png" />
       </div>
       <div class="nav-buttons">
-        <button mat-button class="nav-icon">
+        <button mat-button class="nav-icon" [routerLink]="['/overview']">
           <mat-icon>pie_chart</mat-icon>
           <div class="label">Overview</div>
         </button>
-        <button mat-button class="nav-icon">
+        <button mat-button class="nav-icon" [routerLink]="['/accounts']">
           <mat-icon>attach_money</mat-icon>
           <div class="label">Accounts</div>
         </button>
-        <button mat-button class="nav-icon">
+        <button mat-button class="nav-icon" [routerLink]="['/bills']">
           <mat-icon>money_off</mat-icon>
           <div class="label">Bills</div>
         </button>
-        <button mat-button class="nav-icon">
+        <button mat-button class="nav-icon" [routerLink]="['/budgets']">
           <mat-icon>bar_chart</mat-icon>
           <div class="label">Budgets</div>
         </button>
-        <button mat-button class="nav-icon">
+        <button mat-button class="nav-icon" [routerLink]="['/settings']">
           <mat-icon>settings</mat-icon>
           <div class="label">Settings</div>
         </button>
@@ -30,22 +30,8 @@
     </div>
   </mat-sidenav>
   <mat-sidenav-content>
-    <div style="text-align:center">
-      <div class="rally-card-container">
-        <rally-finance-card
-          title="Accounts"
-          value="$12,000"
-          visibleItemsSize="3"
-          [items]="accountItems"
-        ></rally-finance-card>
-        <rally-finance-card
-          title="Bills"
-          value="$12,000"
-          visibleItemsSize="3"
-          [items]="accountItems"
-        ></rally-finance-card>
-      </div>
+    <div class="main-content">
+      <router-outlet></router-outlet>
     </div>
-    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
