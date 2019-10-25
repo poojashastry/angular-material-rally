@@ -1,4 +1,4 @@
-@import "../../styles";
+@import '../../styles';
 
 $breakpoint-tablet: 767px;
 
@@ -15,11 +15,40 @@ $unit-space: 8px;
   padding: $unit-space * 2;
 }
 
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  height: 8 * $unit-space;
+  width: 100%;
+  padding: 0 2 * $unit-space;
+  margin-top: 2 * $unit-space;
+  box-sizing: border-box;
+  & > div {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    &:last-child {
+      justify-content: flex-end;
+    }
+    button,
+    .nav-title {
+      margin-left: 2 * $unit-space;
+    }
+  }
+}
+
+.nav-title {
+  font-size: 1.5rem;
+}
+
+.custom-stroked:not([disabled]) {
+  border-color: $rally-green;
+}
+
 .icon-container,
 .fingerprint-container {
+  display: none;
   align-items: center;
-  display: flex;
-  flex: 1;
   flex-direction: column;
   justify-content: center;
 }
@@ -32,7 +61,6 @@ form {
   mat-icon {
     color: $rally-green;
   }
-
 }
 
 .form-row {
@@ -56,9 +84,15 @@ form {
 }
 
 // Media smaller than a tablet
-@media(max-width: $breakpoint-tablet) {
+@media (max-width: $breakpoint-tablet) {
+  .navbar-container,
   .login-controls {
     display: none;
+  }
+  .icon-container,
+  .fingerprint-container {
+    display: flex;
+    flex: 1;
   }
 }
 
@@ -87,7 +121,6 @@ form {
     flex-direction: row;
     justify-content: space-between;
   }
-
 }
 
 // Table portrait
