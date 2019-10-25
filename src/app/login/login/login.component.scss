@@ -1,0 +1,37 @@
+$unit-space: 8px;
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  align-items: center;
+  margin: 0 auto;
+  height: 100%;
+  padding: $unit-space * 2;
+  justify-content: space-evenly;
+}
+
+.icon-container,
+.fingerprint-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.fingerprint-container {
+  .fingerprint-icon {
+    width: $unit-space * 6;
+    height: $unit-space * 6;
+  }
+  mat-icon {
+    font-size: $unit-space * 6;
+  }
+}
