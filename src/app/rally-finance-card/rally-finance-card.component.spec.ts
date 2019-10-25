@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RallyFinanceCardComponent } from './rally-finance-card.component';
+import { MatCardModule } from '@angular/material/card';
 
 describe('RallyFinanceCardComponentComponent', () => {
   let component: RallyFinanceCardComponent;
@@ -8,6 +9,7 @@ describe('RallyFinanceCardComponentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [MatCardModule],
       declarations: [RallyFinanceCardComponent],
     }).compileComponents();
   }));
