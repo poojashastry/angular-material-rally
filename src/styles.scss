@@ -1,3 +1,83 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url('https://fonts.googleapis.com/css?family=Eczar&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&display=swap');
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+/** Fonts. */
+$roboto-condensed-font-family: unquote("Roboto Condensed, sans-serif");
+$eczar-font-family: unquote("Eczar");
+
+$rally-green-palette: (
+  50: #c6fdf2,
+  100: #a6fbe2,
+  200: #8bf4d4,
+  300: #78eced,
+  400: #69e2ac,
+  500: #1eb980,
+  600: #459a6c,
+  700: #367b55,
+  800: #275d39,
+  900: #143821,
+  A100: #8c9eff, // These are from "mat-indigo" and weren't defined in the colors for rally green.
+  A200: #536dfe,
+  A400: #3d5afe,
+  A700: #304ffe,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$rally-primary: mat-palette($rally-green-palette);
+$rally-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$rally-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$rally-theme: mat-dark-theme($rally-primary, $rally-accent, $rally-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($rally-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  background-color: #33333d;
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: $roboto-condensed-font-family, "Helvetica Neue", sans-serif;
+}
+
 /**
  * Global colors.
  *
@@ -9,3 +89,93 @@ $rally-orange: #ff6859;
 $rally-yellow: #ffcf44;
 $rally-purple: #b15dff;
 $rally-blue: #72deff;
+$rally-background-color: #33333d;
+
+/** Headlines. */
+h1 {
+    font-family: $roboto-condensed-font-family;
+    font-size: 96pt;
+    font-weight: lighter;
+}
+
+h2 {
+    font-family: $roboto-condensed-font-family;
+    font-size: 60pt;
+    font-weight: lighter;
+}
+
+h3 {
+    font-family: $eczar-font-family;
+    font-size: 48pt;
+}
+
+h4 {
+    font-family: $roboto-condensed-font-family;
+    font-size: 34pt;
+}
+
+h5 {
+    font-family: $roboto-condensed-font-family;
+    font-size: 24pt;
+}
+
+h6 {
+    font-family: $roboto-condensed-font-family;
+    font-size: 20pt;
+    font-weight: medium;
+}
+
+/**
+ * Subheading for h1, h2, and h3.
+ *
+ * `.subtitle` class must be included manually.
+ *
+ * TODO: different convention?
+ */
+h1.subtitle, h2.subtitle, h3.subtitle {
+    font-family: $roboto-condensed-font-family;
+    font-size: 16pt;
+}
+
+/**
+ * Subheading for h{4,5,6}.
+ *
+ * `.subtitle` class must be included manually.
+ *
+ * TODO: different convention?
+ */
+h4.subtitle, h5.subtitle, h6.subtitle {
+    font-family: $roboto-condensed-font-family;
+    font-size: 14pt;
+    font-weight: medium;
+}
+
+.body-1 {
+    font-family: $eczar-font-family;
+    font-size: 16pt;
+}
+
+.body-2 {
+    font-family: $roboto-condensed-font-family;
+    font-weight: lighter;
+    font-size: 14pt;
+}
+
+/** Buttons. */
+button {
+    font-family: $roboto-condensed-font-family;
+    font-size: 14pt;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.caption {
+    font-family: $roboto-condensed-font-family;
+    font-size: 12pt;
+}
+
+.overline {
+    font-family: $roboto-condensed-font-family;
+    font-size: 10pt;
+    text-transform: capitalize;
+}
