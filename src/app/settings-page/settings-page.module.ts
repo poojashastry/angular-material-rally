@@ -5,5 +5,6 @@ import { SettingsPageComponent } from './settings-page.component';
 @NgModule({
   declarations: [SettingsPageComponent],
   imports: [CommonModule],
+  exports: [SettingsPageComponent],
 })
 export class SettingsPageModule {}

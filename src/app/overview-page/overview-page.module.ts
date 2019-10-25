@@ -6,5 +6,6 @@ import { RallyFinanceCardModule } from '../rally-finance-card/rally-finance-card
 @NgModule({
   declarations: [OverviewPageComponent],
   imports: [CommonModule, RallyFinanceCardModule],
+  exports: [OverviewPageComponent],
 })
 export class OverviewPageModule {}
