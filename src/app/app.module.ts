@@ -1,30 +1,17 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AccountsPageModule } from './accounts-page/accounts-page.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RallyFinanceCardModule } from './rally-finance-card/rally-finance-card.module';
 import { LoginModule } from './login/login.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { OverviewPageComponent } from './overview-page/overview-page.component';
-import { AccountsPageComponent } from './accounts-page/accounts-page.component';
-import { AccountsPageModule } from './accounts-page/accounts-page.module';
-import { BillsPageComponent } from './bills-page/bills-page.component';
-import { BudgetsPageComponent } from './budgets-page/budgets-page.component';
-import { SettingsPageComponent } from './settings-page/settings-page.component';
+import { RallyFinanceCardModule } from './rally-finance-card/rally-finance-card.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    OverviewPageComponent,
-    AccountsPageComponent,
-    BudgetsPageComponent,
-    BillsPageComponent,
-    SettingsPageComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
