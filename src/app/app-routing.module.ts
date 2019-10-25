@@ -13,7 +13,8 @@ const routes: Routes = [
   { path: 'bills', component: BillsPageComponent },
   { path: 'budgets', component: BudgetsPageComponent },
   { path: 'settings', component: SettingsPageComponent },
-  { path: '**', component: OverviewPageComponent },
+  { path: 'overview', component: OverviewPageComponent },
+  { path: '**', redirectTo: '/overview' },
 ];
 
 @NgModule({

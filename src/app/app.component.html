@@ -2,27 +2,54 @@
 <mat-sidenav-container class="example-container">
   <mat-sidenav mode="side" opened>
     <div class="sidenav-wrapper">
-      <div class="logo-wrapper">
-        <img class="logo" src="assets/logo.png" />
-      </div>
+      <a [routerLink]="['/overview']">
+        <div class="logo-wrapper">
+          <img class="logo" src="assets/logo.png" />
+        </div>
+      </a>
       <div class="nav-buttons">
-        <button mat-button class="nav-icon" [routerLink]="['/overview']">
+        <button
+          mat-button
+          class="nav-icon"
+          routerLinkActive="active-link"
+          [routerLink]="['/overview']"
+        >
           <mat-icon>pie_chart</mat-icon>
           <div class="label">Overview</div>
         </button>
-        <button mat-button class="nav-icon" [routerLink]="['/accounts']">
+        <button
+          mat-button
+          class="nav-icon"
+          routerLinkActive="active-link"
+          [routerLink]="['/accounts']"
+        >
           <mat-icon>attach_money</mat-icon>
           <div class="label">Accounts</div>
         </button>
-        <button mat-button class="nav-icon" [routerLink]="['/bills']">
+        <button
+          mat-button
+          class="nav-icon"
+          routerLinkActive="active-link"
+          [routerLink]="['/bills']"
+        >
           <mat-icon>money_off</mat-icon>
           <div class="label">Bills</div>
         </button>
-        <button mat-button class="nav-icon" [routerLink]="['/budgets']">
+        <button
+          mat-button
+          class="nav-icon"
+          routerLinkActive="active-link"
+          [routerLink]="['/budgets']"
+        >
           <mat-icon>bar_chart</mat-icon>
           <div class="label">Budgets</div>
         </button>
-        <button mat-button class="nav-icon" [routerLink]="['/settings']">
+        <button
+          mat-button
+          class="nav-icon"
+          routerLinkActive="active-link"
+          [routerLink]="['/settings']"
+        >
           <mat-icon>settings</mat-icon>
           <div class="label">Settings</div>
         </button>
