@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { RallyFinanceCardModule } from './rally-finance-card/rally-finance-card.module';
 import { LoginModule } from './login/login.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,6 +17,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     LoginModule,
     BrowserAnimationsModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatButtonModule,
     RallyFinanceCardModule,
   ],
   providers: [],
