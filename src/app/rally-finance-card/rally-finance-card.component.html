@@ -1,7 +1,15 @@
 <div class="rally-finance-card-container">
-  <span>{{title}}</span>
-  <span>{{value}}</span>
-  <div *ngFor="let item of items">
-    <span>{{item.title}}</span>
-  </div>
+  <mat-card class="rally-finance-card">
+    <div class="category-container">
+      <span>{{title}}</span>
+      <span>{{value}}</span>
+    </div>
+    <div *ngFor="let item of items; let i = index;" class="subcategory-container">
+      <ng-container *ngIf="i < visibleItemsSize">
+        <span >{{item.title}}</span>
+        <span>{{item.subtitle}}</span>
+        <span>{{item.value}}</span>
+      </ng-container>
+    </div>
+  </mat-card>
 </div>
