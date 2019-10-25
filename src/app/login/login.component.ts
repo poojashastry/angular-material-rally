@@ -11,9 +11,7 @@ export class LoginComponent implements OnInit {
 
   MINIMUM_PASSWORD_LENGTH = 9;
 
-  constructor() {
-
-  }
+  constructor() {}
 
   ngOnInit() {}
 }

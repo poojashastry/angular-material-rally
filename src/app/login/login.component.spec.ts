@@ -6,7 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -21,7 +21,7 @@ describe('LoginComponent', () => {
         MatIconModule,
         MatInputModule,
         NoopAnimationsModule,
-        FormsModule
+        FormsModule,
       ],
     }).compileComponents();
   }));
