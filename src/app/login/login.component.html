@@ -9,12 +9,12 @@
 
   <form>
     <mat-form-field appearance="outline">
-      <input matInput type="text" matInput placeholder="username" />
-      <mat-icon matSuffix>mode_edit</mat-icon>
+      <input matInput type="text" name="username" matInput placeholder="username" [(ngModel)]="username"/>
+      <mat-icon matSuffix *ngIf="username !== ''">done</mat-icon>
     </mat-form-field>
     <mat-form-field appearance="outline">
-      <input matInput type="password" matInput placeholder="password" />
-      <mat-icon matSuffix>mode_edit</mat-icon>
+      <input matInput type="password" name="password" matInput placeholder="password" [(ngModel)]="password"/>
+      <mat-icon matSuffix *ngIf="password.length > MINIMUM_PASSWORD_LENGTH">done</mat-icon>
     </mat-form-field>
   </form>
 
