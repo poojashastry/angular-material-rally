@@ -24,6 +24,10 @@ export class RallyFinanceCardComponent implements OnInit {
 
   /** Items belonging to this category. */
   @Input() items: FinanceSubcategory[];
+
+  /** Number of items that are visible in the collapsed view of this component. */
+  @Input() visibleItemsSize: number;
+
   constructor() {}
 
   ngOnInit() {}

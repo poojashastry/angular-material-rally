@@ -1,0 +1,21 @@
+.rally-finance-card-container {
+  background-color: black;
+  color: white;
+  margin: 5px;
+}
+
+.rally-finance-card {
+  display: flex;
+  flex-direction: column;
+
+  .category-container {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+  }
+
+  .subcategory-container {
+    align-self: flex-start;
+  }
+}
+

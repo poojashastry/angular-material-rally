@@ -1,4 +1,13 @@
 h1 {
   background-color: blue;
-  font-size: 50px;   
+  font-size: 50px;
+}
+
+.rally-card-container {
+  display: flex;
+  flex-direction: row;
+}
+
+rally-finance-card {
+  flex-grow: 1;
 }

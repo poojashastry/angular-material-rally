@@ -1,11 +1,13 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { RallyFinanceCardModule } from './rally-finance-card/rally-finance-card.module';
+import { MatCardModule } from '@angular/material/card';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
+      imports: [RouterTestingModule, RallyFinanceCardModule],
       declarations: [AppComponent],
     }).compileComponents();
   }));
