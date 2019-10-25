@@ -12,7 +12,7 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        RallyFinanceCardModule
+        RallyFinanceCardModule,
         MatIconModule,
         MatSidenavModule,
         NoopAnimationsModule,
