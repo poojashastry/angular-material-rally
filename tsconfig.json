@@ -1,4 +1,8 @@
 {
+  "include": [
+    "src/**/*.ts",
+    "test/**/*.ts"
+  ],
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
