@@ -5,5 +5,6 @@ import { BillsPageComponent } from './bills-page.component';
 @NgModule({
   declarations: [BillsPageComponent],
   imports: [CommonModule],
+  exports: [BillsPageComponent],
 })
 export class BillsPageModule {}
