@@ -8,7 +8,7 @@ $unit-space: 8px;
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: calc(100% - #{12 * $unit-space});
   justify-content: space-evenly;
   margin: 0 auto;
   max-width: 700px;
