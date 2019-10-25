@@ -37,3 +37,13 @@ rally-finance-card {
 .main-content {
   height: 100vh;
 }
+.nav-icon {
+  .label {
+    visibility: hidden;
+  }
+  &.active-link {
+    .label {
+      visibility: inherit;
+    }
+  }
+}
