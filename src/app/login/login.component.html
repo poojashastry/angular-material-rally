@@ -8,14 +8,23 @@
   </div>
 
   <form>
-    <mat-form-field appearance="outline">
-      <input matInput type="text" name="username" matInput placeholder="username" [(ngModel)]="username"/>
-      <mat-icon matSuffix *ngIf="username !== ''">done</mat-icon>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-      <input matInput type="password" name="password" matInput placeholder="password" [(ngModel)]="password"/>
-      <mat-icon matSuffix *ngIf="password.length > MINIMUM_PASSWORD_LENGTH">done</mat-icon>
-    </mat-form-field>
+    <div class="form-row">
+      <mat-form-field appearance="outline">
+        <input matInput type="text" name="username" matInput placeholder="username" [(ngModel)]="username"/>
+        <mat-icon matSuffix *ngIf="username !== ''">done</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <input matInput type="password" name="password" matInput placeholder="password" [(ngModel)]="password"/>
+        <mat-icon matSuffix *ngIf="password.length > MINIMUM_PASSWORD_LENGTH">done</mat-icon>
+      </mat-form-field>
+    </div>
+    <div class="form-row login-controls">
+      <span>
+        <mat-checkbox>Remember Me</mat-checkbox>
+      </span>
+      <span><button mat-flat-button color="primary"><mat-icon>lock</mat-icon>LOGIN</button></span>
+    </div>
+
   </form>
 
   <div class="fingerprint-container">
