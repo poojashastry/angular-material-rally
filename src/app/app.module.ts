@@ -9,6 +9,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
 import { RallyFinanceCardModule } from './rally-finance-card/rally-finance-card.module';
+import { BillsPageModule } from './bills-page/bills-page.module';
+import { BudgetsPageModule } from './budgets-page/budgets-page.module';
+import { SettingsPageModule } from './settings-page/settings-page.module';
+import { OverviewPageModule } from './overview-page/overview-page.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +26,10 @@ import { RallyFinanceCardModule } from './rally-finance-card/rally-finance-card.
     MatButtonModule,
     RallyFinanceCardModule,
     AccountsPageModule,
+    BillsPageModule,
+    BudgetsPageModule,
+    OverviewPageModule,
+    SettingsPageModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
