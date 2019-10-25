@@ -1,1 +1,7 @@
-<p>rally-finance-card-component works!</p>
+<div class="rally-finance-card-container">
+  <span>{{title}}</span>
+  <span>{{value}}</span>
+  <div *ngFor="let item of items">
+    <span>{{item.title}}</span>
+  </div>
+</div>

@@ -6,5 +6,6 @@ import { RallyFinanceCardComponent } from './rally-finance-card.component';
 @NgModule({
   declarations: [RallyFinanceCardComponent],
   imports: [CommonModule, MatCardModule],
+  exports: [RallyFinanceCardComponent],
 })
 export class RallyFinanceCardModule {}
