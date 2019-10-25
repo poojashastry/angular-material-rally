@@ -32,7 +32,7 @@
           placeholder="username"
           [(ngModel)]="username"
         />
-        <mat-icon matSuffix *ngIf="username !== ''">done</mat-icon>
+        <mat-icon class="username-icon" matSuffix *ngIf="username !== ''">done</mat-icon>
       </mat-form-field>
       <mat-form-field appearance="outline">
         <input
@@ -43,9 +43,7 @@
           placeholder="password"
           [(ngModel)]="password"
         />
-        <mat-icon matSuffix *ngIf="password.length > MINIMUM_PASSWORD_LENGTH"
-          >done</mat-icon
-        >
+        <mat-icon class="password-icon" matSuffix *ngIf="password.length >= MINIMUM_PASSWORD_LENGTH">done</mat-icon>
       </mat-form-field>
     </div>
     <div class="form-row login-controls">
