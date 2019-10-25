@@ -6,7 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  constructor() {}
+  username = 'philcao5678';
+  password = '';
+
+  MINIMUM_PASSWORD_LENGTH = 9;
+
+  constructor() {
+
+  }
 
   ngOnInit() {}
 }
