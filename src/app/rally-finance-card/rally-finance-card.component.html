@@ -1,14 +1,21 @@
 <div class="rally-finance-card-container">
   <mat-card class="rally-finance-card">
     <div class="category-container">
-      <span>{{title}}</span>
-      <span>{{value}}</span>
+      <span class="card-title">{{title}}</span>
+      <span class="card-value">{{value}}</span>
     </div>
     <div *ngFor="let item of items; let i = index;" class="subcategory-container">
       <ng-container *ngIf="i < visibleItemsSize">
-        <span >{{item.title}}</span>
-        <span>{{item.subtitle}}</span>
-        <span>{{item.value}}</span>
+        <div class="item-info-container" fxLayout.lt-md="column" fxLayout.gt-md="row" fxLayoutAlign="flex-start">
+            <span>{{item.title}}</span>
+            <span fxShow.gt-sm="false">{{item.subtitle}}</span>
+        </div>
+        <div fxHide.sm="true">{{item.subtitle}}</div>
+        <div class="item-value-container" fxLayoutGap="10px">
+            <h3 class="currency-code">$</h3>
+            <h3>{{item.value}}</h3>
+            <mat-icon>keyboard_arrow_right</mat-icon>
+        </div>
       </ng-container>
     </div>
   </mat-card>
