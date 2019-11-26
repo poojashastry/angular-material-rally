@@ -8,10 +8,59 @@
 // Be sure that you only ever include this mixin once!
 @include mat-core();
 
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+/**
+ * Global colors.
+ *
+ * {@see https://material.io/design/material-studies/rally.html#color}
+ */
+
+$rally-green: #1eb980;
+$rally-dark-green: #045d56;
+$rally-orange: #ff6859;
+$rally-yellow: #ffcf44;
+$rally-purple: #b15dff;
+$rally-blue: #72deff;
+
+$rally-green-palette: (
+  50: #c6fdf2,
+  100: #a6fbe2,
+  200: #8bf4d4,
+  300: #78eced,
+  400: #69e2ac,
+  500: #1eb980,
+  600: #459a6c,
+  700: #367b55,
+  800: #275d39,
+  900: #143821,
+  A100: #8c9eff, // These are from "mat-indigo" and weren't defined in the colors for rally green.
+  A200: #536dfe,
+  A400: #3d5afe,
+  A700: #304ffe,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$rally-primary: mat-palette($mat-indigo);
+$rally-primary: mat-palette($rally-green-palette);
 $rally-accent: mat-palette($mat-pink, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
@@ -25,19 +74,10 @@ $rally-theme: mat-light-theme($rally-primary, $rally-accent, $rally-warn);
 // that you are using.
 @include angular-material-theme($rally-theme);
 
-/* You can add global styles to this file, and also import other style files */
-
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-/**
- * Global colors.
- *
- * {@see https://material.io/design/material-studies/rally.html#color}
- */
-$rally-green: #1eb980;
-$rally-dark-green: #045d56;
-$rally-orange: #ff6859;
-$rally-yellow: #ffcf44;
-$rally-purple: #b15dff;
-$rally-blue: #72deff;
+.mat-card {
+  background-color: #373741;
+  color: white;
+}

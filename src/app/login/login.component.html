@@ -1,3 +1,17 @@
+<div class="navbar-container">
+  <div>
+    <img
+      height="100%"
+      alt="Angular Logo"
+      src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
+    />
+    <span class="nav-title">Login to Rally</span>
+  </div>
+  <div>
+    <span>Don't have an account?</span>
+    <button mat-stroked-button class="custom-stroked">SIGN UP</button>
+  </div>
+</div>
 <div class="login-container">
   <div class="icon-container">
     <img
@@ -8,14 +22,42 @@
   </div>
 
   <form>
-    <mat-form-field appearance="outline">
-      <input matInput type="text" name="username" matInput placeholder="username" [(ngModel)]="username"/>
-      <mat-icon matSuffix *ngIf="username !== ''">done</mat-icon>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-      <input matInput type="password" name="password" matInput placeholder="password" [(ngModel)]="password"/>
-      <mat-icon matSuffix *ngIf="password.length > MINIMUM_PASSWORD_LENGTH">done</mat-icon>
-    </mat-form-field>
+    <div class="form-row">
+      <mat-form-field appearance="outline">
+        <input
+          matInput
+          type="text"
+          name="username"
+          matInput
+          placeholder="username"
+          [(ngModel)]="username"
+        />
+        <mat-icon matSuffix *ngIf="username !== ''">done</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <input
+          matInput
+          type="password"
+          name="password"
+          matInput
+          placeholder="password"
+          [(ngModel)]="password"
+        />
+        <mat-icon matSuffix *ngIf="password.length > MINIMUM_PASSWORD_LENGTH"
+          >done</mat-icon
+        >
+      </mat-form-field>
+    </div>
+    <div class="form-row login-controls">
+      <span>
+        <mat-checkbox>Remember Me</mat-checkbox>
+      </span>
+      <span
+        ><button mat-flat-button color="primary">
+          <mat-icon>lock</mat-icon>LOGIN
+        </button></span
+      >
+    </div>
   </form>
 
   <div class="fingerprint-container">

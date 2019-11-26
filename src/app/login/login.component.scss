@@ -1,42 +1,131 @@
-@import "../../styles";
+@import '../../styles';
+
+$breakpoint-tablet: 767px;
 
 $unit-space: 8px;
 
 .login-container {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  max-width: 800px;
-  align-items: center;
-  margin: 0 auto;
-  height: 100%;
-  padding: $unit-space * 2;
+  height: calc(100% - #{12 * $unit-space});
   justify-content: space-evenly;
+  margin: 0 auto;
+  max-width: 700px;
+  padding: $unit-space * 2;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  height: 8 * $unit-space;
+  width: 100%;
+  padding: 0 2 * $unit-space;
+  margin-top: 2 * $unit-space;
+  box-sizing: border-box;
+  & > div {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    &:last-child {
+      justify-content: flex-end;
+    }
+    button,
+    .nav-title {
+      margin-left: 2 * $unit-space;
+    }
+  }
+}
+
+.nav-title {
+  font-size: 1.5rem;
+}
+
+.custom-stroked:not([disabled]) {
+  border-color: $rally-green;
 }
 
 .icon-container,
 .fingerprint-container {
-  flex: 1;
-  display: flex;
+  display: none;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
 }
 
 form {
-  width: 100%;
   display: flex;
   flex-direction: column;
+  width: 100%;
+
   mat-icon {
     color: $rally-green;
   }
 }
 
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-controls {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .fingerprint-container {
   .fingerprint-icon {
-    width: $unit-space * 6;
     height: $unit-space * 6;
+    width: $unit-space * 6;
   }
   mat-icon {
     font-size: $unit-space * 6;
+  }
+}
+
+// Media smaller than a tablet
+@media (max-width: $breakpoint-tablet) {
+  .navbar-container,
+  .login-controls {
+    display: none;
+  }
+  .icon-container,
+  .fingerprint-container {
+    display: flex;
+    flex: 1;
+  }
+}
+
+.login-controls button {
+  color: black;
+  letter-spacing: 0.17472em;
+
+  mat-icon {
+    color: black;
+    margin-right: 0.17472em;
+  }
+}
+
+// Tablet landscape
+@media (min-width: $breakpoint-tablet + 1) and (orientation: landscape) {
+  form mat-form-field {
+    flex: 1;
+  }
+
+  mat-form-field:first-of-type {
+    margin-right: $unit-space * 2;
+  }
+
+  .form-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+// Table portrait
+@media (min-width: $breakpoint-tablet + 1) and (orientation: portrait) {
+  form {
+    max-width: 40 * $unit-space;
   }
 }

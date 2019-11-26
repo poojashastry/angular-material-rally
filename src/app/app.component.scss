@@ -3,6 +3,28 @@ h1 {
   font-size: 50px;
 }
 
+.nav-icon {
+  display: block;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+.logo {
+  width: 80px;
+  padding: 10px;
+}
+
+.logo-wrapper {
+  padding-bottom: 20px;
+}
+
+.sidenav-wrapper,
+.nav-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .rally-card-container {
   display: flex;
   flex-direction: row;
@@ -10,4 +32,18 @@ h1 {
 
 rally-finance-card {
   flex-grow: 1;
+}
+
+.main-content {
+  height: 100vh;
+}
+.nav-icon {
+  .label {
+    visibility: hidden;
+  }
+  &.active-link {
+    .label {
+      visibility: inherit;
+    }
+  }
 }
