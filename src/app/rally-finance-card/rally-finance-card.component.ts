@@ -4,7 +4,7 @@ import { Component, OnInit, Input } from '@angular/core';
  * Represents a line item in the Rally Finance Card.
  * For example: For the 'Accounts' category, potential subcategories would be 'Checking', 'Home Savings', 'Car savings'
  */
-interface FinanceSubcategory {
+export interface FinanceSubcategory {
   title: string;
   subtitle: string;
   value: string;
@@ -24,9 +24,6 @@ export class RallyFinanceCardComponent implements OnInit {
 
   /** Items belonging to this category. */
   @Input() items: FinanceSubcategory[];
-
-  /** Number of items that are visible in the collapsed view of this component. */
-  @Input() visibleItemsSize: number;
 
   constructor() {}
 

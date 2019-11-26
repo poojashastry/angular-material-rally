@@ -4,19 +4,6 @@
       <span class="card-title">{{title}}</span>
       <span class="card-value">{{value}}</span>
     </div>
-    <div *ngFor="let item of items; let i = index;" class="subcategory-container">
-      <ng-container *ngIf="i < visibleItemsSize">
-        <div class="item-info-container" fxLayout.lt-md="column" fxLayout.gt-md="row" fxLayoutAlign="flex-start">
-            <span>{{item.title}}</span>
-            <span fxShow.gt-sm="false">{{item.subtitle}}</span>
-        </div>
-        <div fxHide.sm="true">{{item.subtitle}}</div>
-        <div class="item-value-container" fxLayoutGap="10px">
-            <h3 class="currency-code">$</h3>
-            <h3>{{item.value}}</h3>
-            <mat-icon>keyboard_arrow_right</mat-icon>
-        </div>
-      </ng-container>
-    </div>
+  <rally-finance-list [visibleItemsSize]="3" [items]="items"></rally-finance-list>
   </mat-card>
 </div>

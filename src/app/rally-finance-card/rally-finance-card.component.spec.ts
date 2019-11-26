@@ -1,9 +1,10 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {RallyFinanceCardComponent} from './rally-finance-card.component';
-import {MatCardModule} from '@angular/material/card';
-import {FlexLayoutModule} from '@angular/flex-layout';
-import {MatIconModule} from '@angular/material';
+import { RallyFinanceCardComponent } from './rally-finance-card.component';
+import { MatCardModule } from '@angular/material/card';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatIconModule } from '@angular/material';
+import { RallyFinanceListModule } from '../rally-finance-list/rally-finance-list.module';
 
 describe('RallyFinanceCardComponentComponent', () => {
   let component: RallyFinanceCardComponent;
@@ -11,7 +12,12 @@ describe('RallyFinanceCardComponentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MatCardModule, FlexLayoutModule, MatIconModule],
+      imports: [
+        MatCardModule,
+        FlexLayoutModule,
+        MatIconModule,
+        RallyFinanceListModule,
+      ],
       declarations: [RallyFinanceCardComponent],
     }).compileComponents();
   }));
