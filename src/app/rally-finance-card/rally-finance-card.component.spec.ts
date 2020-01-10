@@ -60,10 +60,14 @@ describe('RallyFinanceCardComponentComponent', () => {
     component.items = [];
     fixture.detectChanges();
 
-    const noAccountMessageElement = fixture.debugElement.query(By.css('#no-accounts'));
+    const noAccountMessageElement = fixture.debugElement.query(
+      By.css('#no-accounts')
+    );
     expect(noAccountMessageElement.nativeElement).toBeTruthy();
-    
-    const financeList = fixture.debugElement.query(By.css('rally-finance-list'));
+
+    const financeList = fixture.debugElement.query(
+      By.css('rally-finance-list')
+    );
     expect(financeList).toBeFalsy();
   });
 });
