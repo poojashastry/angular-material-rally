@@ -4,6 +4,7 @@
       <span class="card-title">{{title}}</span>
       <span class="card-value">{{value}}</span>
     </div>
-  <rally-finance-list [visibleItemsSize]="3" [items]="items"></rally-finance-list>
+  <div id="no-accounts" *ngIf="items.length === 0"> There are no accounts to view. </div>
+  <rally-finance-list class="list" *ngIf="items.length > 0"  [visibleItemsSize]="3" [items]="items"></rally-finance-list>
   </mat-card>
 </div>
