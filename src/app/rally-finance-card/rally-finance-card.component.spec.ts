@@ -2,7 +2,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RallyFinanceCardComponent } from './rally-finance-card.component';
 import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatIconModule } from '@angular/material';
+import { RallyFinanceListModule } from '../rally-finance-list/rally-finance-list.module';
+import { By } from '@angular/platform-browser';
 
 describe('RallyFinanceCardComponentComponent', () => {
   let component: RallyFinanceCardComponent;
@@ -10,7 +13,12 @@ describe('RallyFinanceCardComponentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MatCardModule, MatIconModule],
+      imports: [
+        MatCardModule,
+        FlexLayoutModule,
+        MatIconModule,
+        RallyFinanceListModule,
+      ],
       declarations: [RallyFinanceCardComponent],
     }).compileComponents();
   }));
@@ -18,10 +26,33 @@ describe('RallyFinanceCardComponentComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(RallyFinanceCardComponent);
     component = fixture.componentInstance;
+    component.title = 'foo';
+    component.value = 'bar';
+    component.items = [
+      { title: 'Checking', subtitle: '********1234', value: '2215.13' },
+      { title: 'Home Savings', subtitle: '********4234', value: '8676.88' },
+      { title: 'Car savings', subtitle: '********9012', value: '900.13' },
+    ];
+
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should show title', () => {
+    const title = fixture.debugElement.query(By.css('.card-title'));
+    expect(title.nativeElement.innerHTML).toBe(component.title);
+  });
+
+  it('should show total value', () => {
+    const value = fixture.debugElement.query(By.css('.card-value'));
+    expect(value.nativeElement.innerHTML).toBe(component.value);
+  });
+
+  it('should show list', () => {
+    const list = fixture.debugElement.query(By.css('rally-finance-list'));
+    expect(list).toBeTruthy();
   });
 });
