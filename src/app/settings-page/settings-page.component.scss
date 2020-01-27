@@ -1,0 +1,20 @@
+.mat-list-base {
+  padding-top: 4px;
+
+  button.mat-list-item {
+    background-color: #33333d;
+    height: auto;
+    margin: 1px 0;
+  }
+}
+
+.settings-label {
+  padding: 22px 32px;
+}
+
+mat-icon {
+  font-size: 12px;
+  line-height: 24px;
+  position: absolute;
+  right: 0;
+}
