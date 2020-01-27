@@ -5,7 +5,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RallyFinanceCardModule } from './rally-finance-card/rally-finance-card.module';
-import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -16,6 +17,8 @@ describe('AppComponent', () => {
         MatIconModule,
         MatSidenavModule,
         NoopAnimationsModule,
+        MatToolbarModule,
+        FlexLayoutModule,
       ],
       declarations: [AppComponent],
     }).compileComponents();
