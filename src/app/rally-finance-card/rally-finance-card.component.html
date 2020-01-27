@@ -1,15 +1,10 @@
 <div class="rally-finance-card-container">
   <mat-card class="rally-finance-card">
     <div class="category-container">
-      <span>{{title}}</span>
-      <span>{{value}}</span>
+      <span class="card-title">{{title}}</span>
+      <span class="card-value">{{value}}</span>
     </div>
-    <div *ngFor="let item of items; let i = index;" class="subcategory-container">
-      <ng-container *ngIf="i < visibleItemsSize">
-        <span >{{item.title}}</span>
-        <span>{{item.subtitle}}</span>
-        <span>{{item.value}}</span>
-      </ng-container>
-    </div>
+  <div id="no-accounts" *ngIf="items.length === 0"> There are no accounts to view. </div>
+  <rally-finance-list class="list" *ngIf="items.length > 0"  [visibleItemsSize]="3" [items]="items"></rally-finance-list>
   </mat-card>
 </div>

@@ -8,6 +8,9 @@
 // Be sure that you only ever include this mixin once!
 @include mat-core();
 
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
 /**
  * Global colors.
  *
@@ -71,22 +74,10 @@ $rally-theme: mat-light-theme($rally-primary, $rally-accent, $rally-warn);
 // that you are using.
 @include angular-material-theme($rally-theme);
 
-/* You can add global styles to this file, and also import other style files */
-
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-/**
- * Global colors.
- *
- * {@see https://material.io/design/material-studies/rally.html#color}
- */
-$rally-green: #1eb980;
-$rally-dark-green: #045d56;
-$rally-orange: #ff6859;
-$rally-yellow: #ffcf44;
-$rally-purple: #b15dff;
-$rally-blue: #72deff;
-/* You can add global styles to this file, and also import other style files */
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+.mat-card {
+  background-color: #373741;
+  color: white;
+}
