@@ -13,7 +13,11 @@ export class RallyFinanceListComponent implements OnInit {
   /** Number of items that are visible in the collapsed view of this component. */
   @Input() visibleItemsSize: number;
 
+  visibleItems: FinanceSubcategory[];
+
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.visibleItems = this.items.slice(0, this.visibleItemsSize);
+  }
 }
