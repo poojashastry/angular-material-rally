@@ -13,6 +13,8 @@ import { BillsPageModule } from './bills-page/bills-page.module';
 import { BudgetsPageModule } from './budgets-page/budgets-page.module';
 import { SettingsPageModule } from './settings-page/settings-page.module';
 import { OverviewPageModule } from './overview-page/overview-page.module';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,6 +32,8 @@ import { OverviewPageModule } from './overview-page/overview-page.module';
     BudgetsPageModule,
     OverviewPageModule,
     SettingsPageModule,
+    MatToolbarModule,
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
