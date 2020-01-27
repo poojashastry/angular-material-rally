@@ -58,8 +58,7 @@ describe('AppComponent', () => {
     tick();
     expect(fixture.nativeElement.querySelector('mat-toolbar')).toBeFalsy();
     expect(
-      fixture.debugElement.query(By.css('mat-sidenav')).componentInstance
-        .opened
+      fixture.debugElement.query(By.css('mat-sidenav')).componentInstance.opened
     ).toBe(false);
   }));
 });
