@@ -7,12 +7,7 @@ import { RallyBudgetCardComponent } from './rally-budget-card.component';
 
 @NgModule({
   declarations: [RallyBudgetCardComponent],
-  imports: [
-    CommonModule,
-    MatCardModule,
-    MatIconModule,
-    FlexLayoutModule,
-  ],
+  imports: [CommonModule, MatCardModule, MatIconModule, FlexLayoutModule],
   exports: [RallyBudgetCardComponent],
 })
 export class RallyBudgetCardModule {}
