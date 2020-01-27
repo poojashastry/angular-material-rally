@@ -8,11 +8,13 @@ import { AccountsPageModule } from './accounts-page/accounts-page.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { RallyFinanceCardModule } from './rally-finance-card/rally-finance-card.module';
 import { BillsPageModule } from './bills-page/bills-page.module';
 import { BudgetsPageModule } from './budgets-page/budgets-page.module';
 import { SettingsPageModule } from './settings-page/settings-page.module';
 import { OverviewPageModule } from './overview-page/overview-page.module';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,6 +32,8 @@ import { OverviewPageModule } from './overview-page/overview-page.module';
     BudgetsPageModule,
     OverviewPageModule,
     SettingsPageModule,
+    MatToolbarModule,
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

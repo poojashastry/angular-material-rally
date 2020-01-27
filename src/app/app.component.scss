@@ -7,6 +7,7 @@ h1 {
   display: block;
   text-transform: uppercase;
   padding: 10px;
+  width: 100%;
 }
 
 .logo {
@@ -44,6 +45,23 @@ rally-finance-card {
   &.active-link {
     .label {
       visibility: inherit;
+    }
+  }
+}
+
+mat-toolbar {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+
+  .nav-icon {
+    .label {
+      display: none;
+    }
+    &.active-link {
+      .label {
+        display: inline;
+        padding-left: 10px;
+      }
     }
   }
 }
