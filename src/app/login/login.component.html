@@ -21,14 +21,13 @@
     />
   </div>
 
-  <form>
+  <form #formComponent="ngForm" data-test-id="login-form" (ngSubmit)="onLoginFormSubmit(formComponent)">
     <div class="form-row">
       <mat-form-field appearance="outline">
         <input
           matInput
           type="text"
           name="username"
-          matInput
           placeholder="username"
           [(ngModel)]="username"
         />
@@ -39,7 +38,6 @@
           matInput
           type="password"
           name="password"
-          matInput
           placeholder="password"
           [(ngModel)]="password"
         />
@@ -50,11 +48,11 @@
       <span>
         <mat-checkbox>Remember Me</mat-checkbox>
       </span>
-      <span
-        ><button mat-flat-button color="primary">
+      <span>
+        <button mat-flat-button color="primary" type="submit">
           <mat-icon>lock</mat-icon>LOGIN
-        </button></span
-      >
+        </button>
+      </span>
     </div>
   </form>
 

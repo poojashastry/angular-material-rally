@@ -9,10 +9,14 @@ import { MatInputModule } from '@angular/material/input';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
+import { By } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
+  let router: Router;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -26,8 +30,11 @@ describe('LoginComponent', () => {
         MatInputModule,
         NoopAnimationsModule,
         FormsModule,
+        RouterTestingModule,
       ],
     }).compileComponents();
+
+    router = TestBed.get(Router);
   }));
 
   beforeEach(() => {
@@ -66,5 +73,29 @@ describe('LoginComponent', () => {
     fixture.detectChanges();
 
     expect(fixture.nativeElement.querySelector('.password-icon')).toBeFalsy();
+  });
+
+  it('should navigate to the overview page if login is successful', () => {
+    spyOn(router, 'navigateByUrl');
+
+    component.password = '123456789';
+    fixture.detectChanges();
+    fixture.debugElement
+      .query(By.css('[data-test-id="login-form"]'))
+      .triggerEventHandler('ngSubmit', null);
+
+    expect(router.navigateByUrl).toHaveBeenCalledWith('overview');
+  });
+
+  it('should not navigate to the overview page if login is unsuccessful', () => {
+    spyOn(router, 'navigateByUrl');
+
+    component.password = '123';
+    fixture.detectChanges();
+    fixture.debugElement
+      .query(By.css('[data-test-id="login-form"]'))
+      .triggerEventHandler('ngSubmit', null);
+
+    expect(router.navigateByUrl).not.toHaveBeenCalled();
   });
 });

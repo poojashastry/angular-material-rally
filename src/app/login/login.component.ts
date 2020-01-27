@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'rally-login',
@@ -11,7 +13,13 @@ export class LoginComponent implements OnInit {
 
   MINIMUM_PASSWORD_LENGTH = 9;
 
-  constructor() {}
+  constructor(private readonly router: Router) {}
+
+  onLoginFormSubmit(formComponent: NgForm) {
+    if (this.password.length >= this.MINIMUM_PASSWORD_LENGTH) {
+      this.router.navigateByUrl('overview');
+    }
+  }
 
   ngOnInit() {}
 }
