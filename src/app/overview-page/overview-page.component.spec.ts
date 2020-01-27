@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { OverviewPageComponent } from './overview-page.component';
 import { RallyFinanceCardModule } from '../rally-finance-card/rally-finance-card.module';
+import { RallyBudgetCardModule } from '../rally-budget-card/rally-budget-card.module';
 
 describe('OverviewPageComponent', () => {
   let component: OverviewPageComponent;
@@ -10,7 +11,7 @@ describe('OverviewPageComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [OverviewPageComponent],
-      imports: [RallyFinanceCardModule],
+      imports: [RallyFinanceCardModule, RallyBudgetCardModule],
     }).compileComponents();
   }));
 
