@@ -11,28 +11,15 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
-/**
- * Global colors.
- *
- * {@see https://material.io/design/material-studies/rally.html#color}
- */
-
-$rally-green: #1eb980;
-$rally-dark-green: #045d56;
-$rally-orange: #ff6859;
-$rally-yellow: #ffcf44;
-$rally-purple: #b15dff;
-$rally-blue: #72deff;
-
 $rally-green-palette: (
   50: #c6fdf2,
   100: #a6fbe2,
   200: #8bf4d4,
-  300: #78eced,
+  300: #78eced, // Lighter.
   400: #69e2ac,
-  500: #1eb980,
+  500: #1eb980, // Default.
   600: #459a6c,
-  700: #367b55,
+  700: #367b55, // Darker.
   800: #275d39,
   900: #143821,
   A100: #8c9eff, // These are from "mat-indigo" and weren't defined in the colors for rally green.
@@ -56,6 +43,8 @@ $rally-green-palette: (
     A700: $light-primary-text,
   )
 );
+$rally-green-mat-palette: mat-palette($rally-green-palette, 500, 300, 700);
+$rally-green: mat-color($rally-green-mat-palette, default);
 
 $rally-dark-green-palette: (
   50: rgb(225, 237, 238),
@@ -81,6 +70,8 @@ $rally-dark-green-palette: (
     900: $light-primary-text,
   )
 );
+$rally-dark-green-mat-palette: mat-palette($rally-dark-green-palette, 700);
+$rally-dark-green: mat-color($rally-dark-green-mat-palette, default);
 
 $rally-blue-palette: (
   50: rgb(237 252 255),
@@ -106,6 +97,8 @@ $rally-blue-palette: (
     900: $light-primary-text,
   )
 );
+$rally-blue-mat-palette: mat-palette($rally-blue-palette, 200, 100, 700);
+$rally-blue: mat-color($rally-blue-mat-palette, default);
 
 $rally-purple-palette: (
   50: rgb(218, 204, 244), // Lighter.
@@ -131,6 +124,8 @@ $rally-purple-palette: (
     900: $light-primary-text,
   )
 );
+$rally-purple-mat-palette: mat-palette($rally-purple-palette, 200, 50, 300);
+$rally-purple: mat-color($rally-purple-mat-palette, default);
 
 $rally-orange-palette: (
   50: rgb(229, 198, 192), // Lighter. 
@@ -156,6 +151,8 @@ $rally-orange-palette: (
     900: $light-primary-text,
   )
 );
+$rally-orange-mat-palette: mat-palette($rally-orange-palette, 200, 50, 300);
+$rally-orange: mat-color($rally-orange-mat-palette, default);
 
 $rally-yellow-palette: (
   50: rgb(254, 248, 231),
@@ -181,6 +178,8 @@ $rally-yellow-palette: (
     900: $light-primary-text,
   )
 );
+$rally-yellow-mat-palette: mat-palette($rally-yellow-palette, 300, 200, 500);
+$rally-yellow: mat-color($rally-yellow-mat-palette, default);
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
@@ -195,16 +194,16 @@ $rally-warn: mat-palette($mat-red);
 $rally-theme: mat-dark-theme($rally-primary, $rally-accent, $rally-warn);
 
 // Feature themes (see https://material.io/design/material-studies/rally.html#color).
-$accounts-palette-primary: mat-palette($rally-green-palette, 500, 700, 300);
-$accounts-palette-accent: mat-palette($rally-dark-green-palette, 700);
+$accounts-palette-primary: $rally-green-mat-palette;
+$accounts-palette-accent: $rally-dark-green-mat-palette;
 $accounts-theme: mat-dark-theme($accounts-palette-primary, $accounts-palette-accent);
 
-$bills-palette-primary: mat-palette($rally-orange-palette, 200, 50, 300);
-$bills-palette-accent: mat-palette($rally-yellow-palette, 300, 200, 500);
+$bills-palette-primary: $rally-orange-mat-palette;
+$bills-palette-accent: $rally-yellow-mat-palette;
 $bills-theme: mat-dark-theme($bills-palette-primary, $bills-palette-accent);
 
-$budgets-palette-primary: mat-palette($rally-purple-palette, 200, 50, 300);
-$budgets-palette-accent: mat-palette($rally-blue-palette, 200, 100, 700);
+$budgets-palette-primary: $rally-purple-mat-palette;
+$budgets-palette-accent: $rally-blue-mat-palette;
 $budgets-theme: mat-dark-theme($budgets-palette-primary, $budgets-palette-accent);
 
 // Include theme styles for core and each component used in your app.
