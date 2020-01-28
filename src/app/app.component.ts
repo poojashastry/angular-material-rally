@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,4 +13,10 @@ export class AppComponent {
     { title: 'Home Savings', subtitle: '********4234', value: 8676.88 },
     { title: 'Car savings', subtitle: '********9012', value: 900.13 },
   ];
+
+  constructor(private readonly router: Router) {}
+
+  showNavigation() {
+    return this.router.url !== '/login';
+  }
 }

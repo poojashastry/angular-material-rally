@@ -48,12 +48,12 @@
   </button>
 </ng-template>
 
-<mat-toolbar fxHide fxShow.lt-sm>
+<mat-toolbar *ngIf="showNavigation()" fxHide fxShow.lt-sm>
   <ng-template [ngTemplateOutlet]="navButtons"></ng-template>
 </mat-toolbar>
 
 <mat-sidenav-container class="example-container">
-  <mat-sidenav mode="side" opened fxShow fxHide.lt-sm>
+  <mat-sidenav mode="side" [opened]="showNavigation()" fxShow fxHide.lt-sm>
     <div class="sidenav-wrapper">
       <a [routerLink]="['/overview']">
         <div class="logo-wrapper">
