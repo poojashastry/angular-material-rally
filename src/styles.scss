@@ -46,87 +46,6 @@ $rally-green-palette: (
 $rally-green-mat-palette: mat-palette($rally-green-palette, 500, 300, 700);
 $rally-green: mat-color($rally-green-mat-palette, default);
 
-$rally-dark-green-palette: (
-  50: rgb(225, 237, 238),
-  100: rgb(185, 217, 217),
-  200: rgb(156, 214, 216),
-  300: rbg(120, 206, 201),
-  400: rgb(96, 206, 197),
-  500: rgb(76, 171, 163),
-  600: rgb(56, 129, 123),
-  700: rgb(39, 91, 86), // Default.
-  800: rgb(28, 72, 64),
-  900: rbg(16, 48, 42),
-  contrast: (
-    50: $dark-primary-text,
-    100: $dark-primary-text,
-    200: $dark-primary-text,
-    300: $light-primary-text,
-    400: $light-primary-text,
-    500: $light-primary-text,
-    600: $light-primary-text,
-    700: $light-primary-text,
-    800: $light-primary-text,
-    900: $light-primary-text,
-  )
-);
-$rally-dark-green-mat-palette: mat-palette($rally-dark-green-palette, 700);
-$rally-dark-green: mat-color($rally-dark-green-mat-palette, default);
-
-$rally-blue-palette: (
-  50: rgb(237 252 255),
-  100: rgb(191 240 253), // Lighter.
-  200: rgb(140 220 251), // Default. 
-  300: rbg(121 205 250),
-  400: rgb(104 107 249),
-  500: rgb(84 179 248),
-  600: rgb(64 155 247),
-  700: rgb(51 132 243), // Darker.
-  800: rgb(46 121 221),
-  900: rbg(32 94 197),
-  contrast: (
-    50: $dark-primary-text,
-    100: $dark-primary-text,
-    200: $dark-primary-text,
-    300: $light-primary-text,
-    400: $light-primary-text,
-    500: $light-primary-text,
-    600: $light-primary-text,
-    700: $light-primary-text,
-    800: $light-primary-text,
-    900: $light-primary-text,
-  )
-);
-$rally-blue-mat-palette: mat-palette($rally-blue-palette, 200, 100, 700);
-$rally-blue: mat-color($rally-blue-mat-palette, default);
-
-$rally-purple-palette: (
-  50: rgb(218, 204, 244), // Lighter.
-  100: rgb(195, 158, 242),
-  200: rgb(165, 104, 247), // Default.
-  300: rbg(154, 71, 245), // Darker.
-  400: rgb(149, 49, 244),
-  500: rgb(144, 47, 231),
-  600: rgb(133, 39, 193),
-  700: rgb(116, 31, 153),
-  800: rgb(90, 22, 119),
-  900: rbg(63, 12, 79),
-  contrast: (
-    50: $dark-primary-text,
-    100: $dark-primary-text,
-    200: $dark-primary-text,
-    300: $light-primary-text,
-    400: $light-primary-text,
-    500: $light-primary-text,
-    600: $light-primary-text,
-    700: $light-primary-text,
-    800: $light-primary-text,
-    900: $light-primary-text,
-  )
-);
-$rally-purple-mat-palette: mat-palette($rally-purple-palette, 200, 50, 300);
-$rally-purple: mat-color($rally-purple-mat-palette, default);
-
 $rally-orange-palette: (
   50: rgb(229, 198, 192), // Lighter. 
   100: rgb(244, 182, 169),
@@ -180,6 +99,87 @@ $rally-yellow-palette: (
 );
 $rally-yellow-mat-palette: mat-palette($rally-yellow-palette, 300, 200, 500);
 $rally-yellow: mat-color($rally-yellow-mat-palette, default);
+
+$rally-dark-green-palette: (
+  50: rgb(225, 237, 238),
+  100: rgb(185, 217, 217),
+  200: rgb(156, 214, 216),
+  300: rbg(120, 206, 201),
+  400: rgb(96, 206, 197),
+  500: rgb(76, 171, 163),
+  600: rgb(56, 129, 123),
+  700: rgb(39, 91, 86), // Default.
+  800: rgb(28, 72, 64),
+  900: rbg(16, 48, 42),
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+  )
+);
+$rally-dark-green-mat-palette: mat-palette($rally-dark-green-palette, 700);
+$rally-dark-green: mat-color($rally-dark-green-mat-palette, default);
+
+$rally-purple-palette: (
+  50: rgb(218, 204, 244), // Lighter.
+  100: rgb(195, 158, 242),
+  200: rgb(165, 104, 247), // Default.
+  300: rbg(154, 71, 245), // Darker.
+  400: rgb(149, 49, 244),
+  500: rgb(144, 47, 231),
+  600: rgb(133, 39, 193),
+  700: rgb(116, 31, 153),
+  800: rgb(90, 22, 119),
+  900: rbg(63, 12, 79),
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+  )
+);
+$rally-purple-mat-palette: mat-palette($rally-purple-palette, 200, 50, 300);
+$rally-purple: mat-color($rally-purple-mat-palette, default);
+
+$rally-blue-palette: (
+  50: rgb(237 252 255),
+  100: rgb(191 240 253), // Lighter.
+  200: rgb(140 220 251), // Default. 
+  300: rbg(121 205 250),
+  400: rgb(104 107 249),
+  500: rgb(84 179 248),
+  600: rgb(64 155 247),
+  700: rgb(51 132 243), // Darker.
+  800: rgb(46 121 221),
+  900: rbg(32 94 197),
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+  )
+);
+$rally-blue-mat-palette: mat-palette($rally-blue-palette, 200, 100, 700);
+$rally-blue: mat-color($rally-blue-mat-palette, default);
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
