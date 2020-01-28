@@ -57,6 +57,131 @@ $rally-green-palette: (
   )
 );
 
+$rally-dark-green-palette: (
+  50: rgb(225, 237, 238),
+  100: rgb(185, 217, 217),
+  200: rgb(156, 214, 216),
+  300: rbg(120, 206, 201),
+  400: rgb(96, 206, 197),
+  500: rgb(76, 171, 163),
+  600: rgb(56, 129, 123),
+  700: rgb(39, 91, 86), // Default.
+  800: rgb(28, 72, 64),
+  900: rbg(16, 48, 42),
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+  )
+);
+
+$rally-blue-palette: (
+  50: rgb(237 252 255),
+  100: rgb(191 240 253), // Lighter.
+  200: rgb(140 220 251), // Default. 
+  300: rbg(121 205 250),
+  400: rgb(104 107 249),
+  500: rgb(84 179 248),
+  600: rgb(64 155 247),
+  700: rgb(51 132 243), // Darker.
+  800: rgb(46 121 221),
+  900: rbg(32 94 197),
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+  )
+);
+
+$rally-purple-palette: (
+  50: rgb(218, 204, 244), // Lighter.
+  100: rgb(195, 158, 242),
+  200: rgb(165, 104, 247), // Default.
+  300: rbg(154, 71, 245), // Darker.
+  400: rgb(149, 49, 244),
+  500: rgb(144, 47, 231),
+  600: rgb(133, 39, 193),
+  700: rgb(116, 31, 153),
+  800: rgb(90, 22, 119),
+  900: rbg(63, 12, 79),
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+  )
+);
+
+$rally-orange-palette: (
+  50: rgb(229, 198, 192), // Lighter. 
+  100: rgb(244, 182, 169),
+  200: rgb(240, 139, 128), // Default.
+  300: rbg(238, 133, 96), // Darker.
+  400: rgb(235, 73, 52),
+  500: rgb(235, 52, 36),
+  600: rgb(205, 43, 29),
+  700: rgb(116, 33, 22),
+  800: rgb(128, 23, 14),
+  900: rbg(90, 13, 9),
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+  )
+);
+
+$rally-yellow-palette: (
+  50: rgb(254, 248, 231),
+  100: rgb(252, 235, 183),
+  200: rgb(250, 220, 134), // Lighter.
+  300: rbg(248, 207, 95), // Default.
+  400: rgb(246, 189, 78),
+  500: rgb(244, 174, 65), // Darker
+  600: rgb(240, 138, 52),
+  700: rgb(238, 119, 47),
+  800: rgb(229, 96, 41),
+  900: rbg(214, 69, 34),
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+  )
+);
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
@@ -69,9 +194,23 @@ $rally-warn: mat-palette($mat-red);
 // Create the theme object (a Sass map containing all of the palettes).
 $rally-theme: mat-dark-theme($rally-primary, $rally-accent, $rally-warn);
 
+// Feature themes (see https://material.io/design/material-studies/rally.html#color).
+$accounts-palette-primary: mat-palette($rally-green-palette, 500, 700, 300);
+$accounts-palette-accent: mat-palette($rally-dark-green-palette, 700);
+$accounts-theme: mat-dark-theme($accounts-palette-primary, $accounts-palette-accent);
+
+$bills-palette-primary: mat-palette($rally-orange-palette, 200, 50, 300);
+$bills-palette-accent: mat-palette($rally-yellow-palette, 300, 200, 500);
+$bills-theme: mat-dark-theme($bills-palette-primary, $bills-palette-accent);
+
+$budgets-palette-primary: mat-palette($rally-purple-palette, 200, 50, 300);
+$budgets-palette-accent: mat-palette($rally-blue-palette, 200, 100, 700);
+$budgets-theme: mat-dark-theme($budgets-palette-primary, $budgets-palette-accent);
+
 // Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
+// This is the app-wide default theme, and will get overridden by application (via an `@include
+// angular-material-theme($another-theme)` in the desired component's .scss file) of another,
+// more-locally-scoped theme if present.
 @include angular-material-theme($rally-theme);
 
 html, body { height: 100%; }
