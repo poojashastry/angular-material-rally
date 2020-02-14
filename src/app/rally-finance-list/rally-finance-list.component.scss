@@ -1,7 +1,9 @@
 .list-container {
   align-items: center;
   align-self: flex-start;
-  background-color: #33333d;
+  border-bottom-color: #33333d;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
   display: flex;
   height: 68px;
   justify-content: space-between;
