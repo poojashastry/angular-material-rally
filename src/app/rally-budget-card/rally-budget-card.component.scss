@@ -19,6 +19,7 @@
 
       .budget-value-container {
           display: flex;
+          flex-wrap: wrap;
 
           .remaining-amount-container,
           .total-amount-container {
