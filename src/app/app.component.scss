@@ -4,10 +4,8 @@ h1 {
 }
 
 .nav-icon {
-  display: block;
+  padding: 0;
   text-transform: uppercase;
-  padding: 10px;
-  width: 100%;
 }
 
 .logo {
@@ -50,17 +48,18 @@ rally-finance-card {
 }
 
 mat-toolbar {
-  display: grid;
-  grid-template-columns: repeat(5, auto);
+  justify-content: space-evenly;
 
   .nav-icon {
+    min-width: 0;
     .label {
       display: none;
+      letter-spacing: 0.2rem;
     }
     &.active-link {
       .label {
         display: inline;
-        padding-left: 10px;
+        padding-left: 5px;
       }
     }
   }
